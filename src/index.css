@@ -1,68 +1,87 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Apply a background image to the entire body of the document. */
 body {
-  margin: 0;
+  background-image: url("./concrete.jpg"); /* The image used as a background. */
+  background-repeat: no-repeat; /* The background image will not repeat. */
+  background-attachment: fixed; /* The background image will not scroll with the page. */
+  background-size: cover; /* The background image will cover the entire area of the element. */
+}
+nav {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+/* Styling for the introduction text of the application. */
+.intro {
+  text-align: center; /* The text is centered. */
+  color: #610564; /* The color of the text. */
+  font-size: 24px; /* The size of the text. */
+  padding: 24px; /* The padding around the text. */
+  margin-left: 21px; /* The margin to the left of the text. */
+  padding-right: 100px; /* The padding to the right of the text. */
+  padding-left: 100px; /* The padding to the left of the text. */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Styling for the container that holds the player cards. */
+.players {
+   /* The player cards are displayed using flexbox. */
+   display: flex;
+ /* The player cards will wrap onto the next line if there is not enough space. */
+  flex-wrap: wrap;
+ /* The player cards are centered on the line. */
+  justify-content: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Styling for individual player cards. */
+.player-card {
+  width: 360px; /* The width of the card. */
+  height: 380px; /* The height of the card. */
+  margin: 10px; /* The margin around the card. */
+   /* The background color of the card. */
+   background-color: aqua;
+/* The border around the card. */
+border: solid black;
+ /* The radius of the card's corners. */
+ border-radius: 5px;
+   /* The shadow effect around the card. */
+  overflow: hidden; /* Any content that goes outside the card will be hidden. */
+  position: relative; /* The card's position is set to relative so it can be moved using the transform property. */
+  transition: transform 0.3s; /* Transition effect for the transform property. */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Styling for when a user hovers over a player card. */
+.player-card:hover {
+  /* The card moves up 5 pixels when hovered over. */
+  transform: translateY(
+    -5px
+  );
 }
+
+/* Styling for the container that holds the player's image. */
+.player-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 300px;
+  padding: 10px;
+}
+
+/* Styling for the player's image. */
+.player-image {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  margin-left: 12px;
+}
+
+/* Styling for the player's details (name, breed, status). */
+.player-details {
+  flex-direction: column; /* The details are arranged in a column. */
+  align-items: center; /* The details are centered along the vertical axis. */
+  justify-content: center; /* The details are centered along the horizontal axis. */
+  color: #000; /* The color of the details text. */
+  font-size: 16px; /* The size of the details text. */
+  text-align: center; /* The details text is centered. */
+}
+
